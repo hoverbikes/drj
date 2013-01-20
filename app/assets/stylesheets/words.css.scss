@@ -1,0 +1,13 @@
+// Place all the styles related to the Words controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+section.attribute_pair {
+	width: 8em;
+	float: left;
+	margin: 1em;
+	font-weight:600;
+}
+section.attribute_pair label{
+	font-weight: 300;
+}
