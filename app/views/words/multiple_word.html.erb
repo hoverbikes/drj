@@ -1,0 +1,91 @@
+<%
+
+attribute_options = ["pron", "pattern", "nphon", "v_lec", "v_lec_freq", "v_lec_nh", "v_lec_nh_freq", "v_psum", "v_pskew", "v_pkurt", "v_psd", "v_pfwsum", "v_psum_nh", "v_pskew_nh", "v_pkurt_nh", "v_psd_nh", "v_pfwsum_nh", "a_denb", "a_denb_freq", "a_denb_nh", "a_denb_nh_freq", "a_dena", "a_dena_freq", "a_dena_nh", "a_dena_nh_freq", "a_dena_hfn", "a_dena_hfn_nh", "a_denb_hfn", "a_denb_hfn_nh", "a_psum", "a_pskew", "a_pkurt", "a_psd", "a_pfwsum", "a_psum_nh", "a_pskew_nh", "a_pkurt_nh", "a_psd_nh", "a_pfwsum_nh", "a_wt_psum", "a_wt_pskew", "a_wt_pkurt", "a_wt_psd", "a_wt_pfwsum", "a_wt_psum_nh", "a_wt_pskew_nh", "a_wt_pkurt_nh", "a_wt_psd_nh", "a_wt_pfwsum_nh"] 
+
+
+%>
+
+
+<section>
+    <%= form_tag '/phibase' do %>
+	<%= text_area_tag 'wordstring' %>
+	<br>
+	<% attribute_options.each do |attribute| %>
+		<%= check_box_tag(attribute, checked = true) %> <%= attribute %><br>
+	<% end %>
+	<br>
+	<%= submit_tag 'word up' %>
+	<% end %>
+</section>
+<table>
+	<tr>
+		<th>orthographic word</th>
+		<% if params["pron"] %><th>pron</th> <% end %>
+		<% if params["pattern"] %><th>pattern</th> <% end %>
+		<% if params["nphon"] %><th>nphon</th> <% end %>
+		<% if params["v_lec"] %><th>v_lec</th> <% end %>
+		<% if params["v_lec_freq"] %><th>v_lec_freq</th> <% end %>
+		<% if params["v_lec_nh"] %><th>v_lec_nh</th> <% end %>
+		<% if params["v_lec_nh_freq"] %><th>v_lec_nh_freq</th> <% end %>
+		<% if params["v_psum"] %><th>v_psum</th> <% end %>
+		<% if params["v_pskew"] %><th>v_pskew</th> <% end %>
+		<% if params["v_pkurt"] %><th>v_pkurt</th> <% end %>
+		<% if params["v_psd"] %><th>v_psd</th> <% end %>
+		<% if params["v_pfwsum"] %><th>v_pfwsum</th> <% end %>
+		<% if params["v_psum_nh"] %><th>v_psum_nh</th> <% end %>
+		<% if params["v_pskew_nh"] %><th>v_pskew_nh</th> <% end %>
+		<% if params["v_pkurt_nh"] %><th>v_pkurt_nh</th> <% end %>
+		<% if params["v_psd_nh"] %><th>v_psd_nh</th> <% end %>
+		<% if params["v_pfwsum_nh"] %><th>v_pfwsum_nh</th> <% end %>
+		<% if params["a_denb"] %><th>a_denb</th> <% end %>
+		<% if params["a_denb_freq"] %><th>a_denb_freq</th> <% end %>
+		<% if params["a_denb_nh"] %><th>a_denb_nh</th> <% end %>
+		<% if params["a_denb_nh_freq"] %><th>a_denb_nh_freq</th> <% end %>
+		<% if params["a_dena"] %><th>a_dena</th> <% end %>
+		<% if params["a_dena_freq"] %><th>a_dena_freq</th> <% end %>
+		<% if params["a_dena_nh"] %><th>a_dena_nh</th> <% end %>
+		<% if params["a_dena_nh_freq"] %><th>a_dena_nh_freq</th> <% end %>
+		<% if params["a_dena_hfn"] %><th>a_dena_hfn</th> <% end %>
+		<% if params["a_dena_hfn_nh"] %><th>a_dena_hfn_nh</th> <% end %>
+		<% if params["a_denb_hfn"] %><th>a_denb_hfn</th> <% end %>
+		<% if params["a_denb_hfn_nh"] %><th>a_denb_hfn_nh</th> <% end %>
+		<% if params["a_psum"] %><th>a_psum</th> <% end %>
+		<% if params["a_pskew"] %><th>a_pskew</th> <% end %>
+		<% if params["a_pkurt"] %><th>a_pkurt</th> <% end %>
+		<% if params["a_psd"] %><th>a_psd</th> <% end %>
+		<% if params["a_pfwsum"] %><th>a_pfwsum</th> <% end %>
+		<% if params["a_psum_nh"] %><th>a_psum_nh</th> <% end %>
+		<% if params["a_pskew_nh"] %><th>a_pskew_nh</th> <% end %>
+		<% if params["a_pkurt_nh"] %><th>a_pkurt_nh</th> <% end %>
+		<% if params["a_psd_nh"] %><th>a_psd_nh</th> <% end %>
+		<% if params["a_pfwsum_nh"] %><th>a_pfwsum_nh</th> <% end %>
+		<% if params["a_wt_psum"] %><th>a_wt_psum</th> <% end %>
+		<% if params["a_wt_pskew"] %><th>a_wt_pskew</th> <% end %>
+		<% if params["a_wt_pkurt"] %><th>a_wt_pkurt</th> <% end %>
+		<% if params["a_wt_psd"] %><th>a_wt_psd</th> <% end %>
+		<% if params["a_wt_pfwsum"] %><th>a_wt_pfwsum</th> <% end %>
+		<% if params["a_wt_psum_nh"] %><th>a_wt_psum_nh</th> <% end %>
+		<% if params["a_wt_pskew_nh"] %><th>a_wt_pskew_nh</th> <% end %>
+		<% if params["a_wt_pkurt_nh"] %><th>a_wt_pkurt_nh</th> <% end %>
+		<% if params["a_wt_psd_nh"] %><th>a_wt_psd_nh</th> <% end %>
+		<% if params["a_wt_pfwsum_nh"] %><th>a_wt_pfwsum_nh</th> <% end %>
+	</tr>
+	
+<% params["wordstring"].split(" ").each do |word|  %>
+<%	@word = Word.find_by_orth(word) %>
+	<tr>
+		<td><%= @word.orth %></td>
+		<% attribute_options.each do |attribute| %>
+			<% if params[attribute]  %>
+				<td><%= @word.attributes[attribute] %></td>
+			<% end %>
+		<% end %>
+	</tr>
+<% end %>
+</table>
+
+
+
+
+
+

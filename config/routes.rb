@@ -1,5 +1,6 @@
 Drj::Application.routes.draw do
   match 'phibase/:orth', to: 'words#single_word'
+  match 'phibase', to: 'words#multiple_word'
   root to: "pages#home"
 
   # The priority is based upon order of creation:
