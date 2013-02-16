@@ -1,48 +1,140 @@
-
 <section id="word_selection">
     <%= form_tag '/phibase' do %>
 		<%= text_area_tag 'wordstring' %>
 		<br>
-		<% @word_properties.each do |attribute| %>
-			<%= check_box_tag attribute %><%= attribute %>
+		
+		<fieldset id="word_properties">
+		<% Word.word_properties.each do |attribute| %>
+			<%= check_box_tag attribute %>
+			<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label>
 		<% end %>
+		</fieldset>
+
 		<section id="including_homophones_boxes">
 			<h1>Including Homophones</h1>
-			<h2>Visual-only Categorical</h2>
-			<% @v_only_categorical_including_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>		
-			<h2>Visual-only Continuous</h2>
-			<% @v_only_continuous_including_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
-			<h2>Audio-only Categorical</h2>
-			<% @a_only_categorical_including_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
-			<h2>Audio-only Continuous</h2>
-			<% @a_only_continuous_including_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Categorical
+				</h2>
+				<ul>
+				<% Word.v_only_categorical_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Continuous
+				</h2>
+				<ul>
+				<% Word.v_only_continuous_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Categorical
+				</h2>
+				<ul>
+				<% Word.a_only_categorical_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Continuous
+				</h2>
+				<ul>
+				<% Word.a_only_continuous_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
 		</section>
 		<section id="excluding_homophones_boxes">
 			<h1>Exluding Homophones</h1>
-			<h2>Visual-only Categorical</h2>
-			<% @v_only_categorical_excluding_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
-			<h2>Visual-only Continuous</h2>
-			<% @v_only_continuous_excluding_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
-			<h2>Audio-only Categorical</h2>
-			<% @a_only_categorical_excluding_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
-			<h2>Audio-only Continuous</h2>
-			<% @a_only_continuous_excluding_homophones.each do |attribute| %>
-				<%= check_box_tag attribute %><%= attribute %><br>
-			<% end %>
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Categorical
+				</h2>
+				<ul>
+				<% Word.v_only_categorical_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Continuous
+				</h2>
+				<ul>
+				<% Word.v_only_continuous_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Categorical
+				</h2>
+				<ul>
+				<% Word.a_only_categorical_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Continuous
+				</h2>
+				<ul>
+				<% Word.a_only_continuous_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+
 		</section>
 		<br>
 		<%= submit_tag 'word up', id: 'word_up' %>
@@ -53,23 +145,25 @@
 	<table class="table">
 		<tr>
 			<th>orthographic word</th>
-			<% @attribute_options.each do |attribute| %>
-				<% if params[attribute] %><th><%= attribute %></th><% end %>
+			<% Word.attribute_options.each do |attribute| %>
+				<% if params[attribute] %><th title="<%=attribute.humanize%>"><%= attribute %></th><% end %>
 			<% end %>
 		</tr>
+
 		<% @wordarray.split(" ").each do |word|  %>
-		<% @word = Word.find_by_orth(word) %>
-			<% if @word %>
-			<tr>
-				<td><%= @word.orth %></td>
-				<% @attribute_options.each do |attribute| %>
-					<% if params[attribute]  %>
-						<td><%= @word.attributes[attribute] %></td>
+			<% @word = Word.find_by_orth(word) %>
+				<% if @word %>
+				<tr>
+					<td><%= @word.orth %></td>
+					<% Word.attribute_options.each do |attribute| %>
+						<% if params[attribute]  %>
+							<td><%= @word.attributes[attribute] %></td>
+						<% end %>
 					<% end %>
-				<% end %>
-			</tr>
+				</tr>
 			<% end %>
 		<% end %>
+
 	</table>
 </section>
 

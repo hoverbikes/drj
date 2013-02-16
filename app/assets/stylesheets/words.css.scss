@@ -14,7 +14,7 @@ section.attribute_pair label{
 
 section#word_selection {
 	float:left;
-	width: 300px;
+	width: 400px;
 	margin: 50px 25px 0 50px;
 	border-right: 3px solid #333;
 	padding-right: 25px;
@@ -24,10 +24,27 @@ section#word_selection {
 		height: 50px;
 		font-size:1.5em;
 	}
+	label {
+		display:inline;
+	}
+	fieldset {
+		outline: 0;
+	}
+	ul {
+		list-style:none;
+	}
 }
+fieldset#word_properties label {
+	display: inline-block;
+	margin-right: 75px;
+}
+
 section#phibase_multiple_results {
 	margin: 50px 0 0 25px;
-	float:left;
+	position: absolute;
+	top: 0;
+	left: 500px;
+	padding-right: 50px;
 }
 #including_homophones_boxes {
 	h1, h2 {
@@ -41,12 +58,12 @@ section#phibase_multiple_results {
 }
 
 #including_homophones_boxes, #excluding_homophones_boxes {
-	width:150px;
+	width:200px;
 	float:left;
 	h1 {
 		font-size: 1em;
 		margin: 0;
-		line-height: 1.6em;
+		line-height: 3em;
 	}
 	h2 {
 		font-size: 0.9em;

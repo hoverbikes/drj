@@ -1,3 +1,33 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+
+}
+
+section.triptych {
+	color: #fff;
+	text-shadow: 2px 2px 2px #333;
+	width: 480px;
+	height: 300px;
+	margin: 25px;;
+	float: left;
+	padding: 10px;
+	text-align: right;
+	line-height: 3em;
+	box-shadow: 5px 5px 20px #333;
+}
+section#carleton {
+	background: url("julia.jpg");
+	background-size: cover;
+	background-position: center;
+}
+section#phibase {
+	background: url("formula.jpeg");
+	background-size: cover;
+}
+section#hokeystokes {
+	background: url("hokeystokes.jpg");
+	background-size: cover;
+}
