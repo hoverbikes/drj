@@ -11,6 +11,7 @@ Drj::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
+
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
@@ -26,6 +27,10 @@ Drj::Application.configure do
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+
+  # static images weren't showing up, found this on Stack Overflow:  -JGS 2/16/2013
+  # http://stackoverflow.com/questions/6458947/rails-3-1-heroku-cedar-static-image-assets-are-not-being-served
+  config.action_dispatch.x_sendfile_header = nil # For Heroku
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
