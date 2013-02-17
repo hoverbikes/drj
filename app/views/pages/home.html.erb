@@ -1,11 +1,14 @@
 <div id="container">
-		<section class="triptych" id="carleton">
-			<h1>academic page</h1>
-		</section>
-		<%=link_to phibase_path%><section class="triptych" id="phibase">
-			<h1>phibase tool</h1>
-		</section>
+		<h1 class="huge">juliastrand.com</h1>
 		<section class="triptych" id="hokeystokes">
-			<h1>book carving</h1>
+			<%= link_to	content_tag(:span, "book carving"), "http://hokeystokes.blogspot.com", alt: "Book Art" %>
+		</section>
+
+		<section class="triptych" id="carleton">
+			<%= link_to content_tag(:span, "academic website"), "https://apps.carleton.edu/curricular/psyc/jstrand/", alt: "Carleton College Academic Website" %>
+		</section>
+
+		<section class="triptych" id="phibase">
+			<%= link_to	content_tag(:span, "phibase tool"), phibase_path, alt: "Phibase Tool" %>
 		</section>
 </div>

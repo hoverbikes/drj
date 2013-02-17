@@ -2,22 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+/* COLOR CONSTANTS */
+$niceblue: #1967B0;
+$nicegreen: #169943;
 
+body{
+	background: url('fabric_plaid.png');
+	background-repeat: repeat;
+	min-width: 950px;
+}
+
+h1.huge {
+	font-size: 7em;
+	color: #666;
+}
+
+#container {
+	width: 90%;
+	margin: 200px auto 0;
 }
 
 section.triptych {
-	color: #fff;
-	text-shadow: 2px 2px 2px #333;
-	width: 480px;
-	height: 300px;
-	margin: 25px;;
-	float: left;
-	padding: 10px;
+	width: 25%;
+	height: 200px;
+	box-shadow: 3px 3px 15px #333;
+	position: relative;
 	text-align: right;
-	line-height: 3em;
-	box-shadow: 5px 5px 20px #333;
+	span {
+		width:97%;
+		height:100%;
+		z-index:2;
+		position: absolute;
+		//background-color: rgba(255,0,0,.3);
+		right: 0;
+		top: 0;
+		padding-right: 3%;
+	}
+	a {
+		color: #fff;
+		text-shadow: 0 0 5px #000;
+		font-size: 1.5em;
+		font-weight: 700;
+		line-height: 400px;
+	}
+	a:hover{
+		color: #8df;
+		text-decoration: none;
+	}
 }
+
+
+
 section#carleton {
 	background: url("julia.jpg");
 	background-size: cover;

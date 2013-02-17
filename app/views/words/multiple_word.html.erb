@@ -2,16 +2,42 @@
     <%= form_tag '/phibase' do %>
 		<%= text_area_tag 'wordstring' %>
 		<br>
-		
 		<fieldset id="word_properties">
 		<% Word.word_properties.each do |attribute| %>
 			<%= check_box_tag attribute %>
 			<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label>
 		<% end %>
 		</fieldset>
-
 		<section id="including_homophones_boxes">
 			<h1>Including Homophones</h1>
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Categorical
+				</h2>
+				<ul>
+				<% Word.a_only_categorical_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Audio-only Continuous
+				</h2>
+				<ul>
+				<% Word.a_only_continuous_including_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
 			<fieldset>
 				<h2>
 					<input type="checkbox" class="checkall">
@@ -41,70 +67,9 @@
 				<% end %>
 				</ul>
 			</fieldset>
-
-			<fieldset>
-				<h2>
-					<input type="checkbox" class="checkall">
-					Audio-only Categorical
-				</h2>
-				<ul>
-				<% Word.a_only_categorical_including_homophones.each do |attribute| %>
-					<li>
-						<%= check_box_tag attribute %>
-						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
-					</li>
-				<% end %>
-				</ul>
-			</fieldset>
-
-			<fieldset>
-				<h2>
-					<input type="checkbox" class="checkall">
-					Audio-only Continuous
-				</h2>
-				<ul>
-				<% Word.a_only_continuous_including_homophones.each do |attribute| %>
-					<li>
-						<%= check_box_tag attribute %>
-						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
-					</li>
-				<% end %>
-				</ul>
-			</fieldset>
-
 		</section>
 		<section id="excluding_homophones_boxes">
 			<h1>Exluding Homophones</h1>
-			<fieldset>
-				<h2>
-					<input type="checkbox" class="checkall">
-					Visual-only Categorical
-				</h2>
-				<ul>
-				<% Word.v_only_categorical_excluding_homophones.each do |attribute| %>
-					<li>
-						<%= check_box_tag attribute %>
-						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
-					</li>
-				<% end %>
-				</ul>
-			</fieldset>
-
-			<fieldset>
-				<h2>
-					<input type="checkbox" class="checkall">
-					Visual-only Continuous
-				</h2>
-				<ul>
-				<% Word.v_only_continuous_excluding_homophones.each do |attribute| %>
-					<li>
-						<%= check_box_tag attribute %>
-						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
-					</li>
-				<% end %>
-				</ul>
-			</fieldset>
-
 			<fieldset>
 				<h2>
 					<input type="checkbox" class="checkall">
@@ -119,7 +84,6 @@
 				<% end %>
 				</ul>
 			</fieldset>
-
 			<fieldset>
 				<h2>
 					<input type="checkbox" class="checkall">
@@ -134,7 +98,34 @@
 				<% end %>
 				</ul>
 			</fieldset>
-
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Categorical
+				</h2>
+				<ul>
+				<% Word.v_only_categorical_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<h2>
+					<input type="checkbox" class="checkall">
+					Visual-only Continuous
+				</h2>
+				<ul>
+				<% Word.v_only_continuous_excluding_homophones.each do |attribute| %>
+					<li>
+						<%= check_box_tag attribute %>
+						<label for=<%=attribute%> title="<%=attribute.humanize%>"><%= attribute %></label><br>
+					</li>
+				<% end %>
+				</ul>
+			</fieldset>
 		</section>
 		<br>
 		<%= submit_tag 'word up', id: 'word_up' %>
@@ -163,7 +154,6 @@
 				</tr>
 			<% end %>
 		<% end %>
-
 	</table>
 </section>
 

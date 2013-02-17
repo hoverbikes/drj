@@ -2,14 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/* COLOR CONSTANTS */
+$niceblue: #1967B0;
+$nicegreen: #169943;
+
+/* COLOR VARIABLES */
+$accent_a: $nicegreen;
+$accent_b: $niceblue;
+
+#big_single_word {
+	text-align:center;
+	padding: 50px 0 50px;
+	h1 {
+		margin-bottom:60px;
+		font-size:10em;
+	}
+	h2 {
+		font-size:4em;
+	}
+}
+
 section.attribute_pair {
 	width: 8em;
 	float: left;
 	margin: 1em;
 	font-weight:600;
-}
-section.attribute_pair label{
-	font-weight: 300;
+	label{
+		font-weight: 300;
+	}
 }
 
 section#word_selection {
@@ -33,7 +54,7 @@ section#word_selection {
 	ul {
 		list-style:none;
 	}
-}
+} 
 fieldset#word_properties label {
 	display: inline-block;
 	margin-right: 75px;
@@ -48,12 +69,12 @@ section#phibase_multiple_results {
 }
 #including_homophones_boxes {
 	h1, h2 {
-		color: #39f;
+		color: $accent_a;
 	}
 }
 #excluding_homophones_boxes {
 	h1, h2 {
-		color: #c63;
+		color: $accent_b;
 	}
 }
 
