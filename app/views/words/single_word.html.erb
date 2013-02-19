@@ -3,6 +3,8 @@
 	<h2>(<%= @results.pron %>)</h2>
 </section>
 
+<section id="single_word_attribute_field">
 <% Word.attribute_options.each do |attribute| %>
 	<%= render 'layouts/attribute_pair', :attribute => attribute %>
 <% end %>
+</section>

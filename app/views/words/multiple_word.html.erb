@@ -128,33 +128,12 @@
 			</fieldset>
 		</section>
 		<br>
-		<%= submit_tag 'word up', id: 'word_up' %>
+		<%= submit_tag 'submit words', id: 'word_up' %>
 	<% end %>
 </section>
 
 <section id="phibase_multiple_results">
-	<table class="table">
-		<tr>
-			<th>orthographic word</th>
-			<% Word.attribute_options.each do |attribute| %>
-				<% if params[attribute] %><th title="<%=attribute.humanize%>"><%= attribute %></th><% end %>
-			<% end %>
-		</tr>
-
-		<% @wordarray.split(" ").each do |word|  %>
-			<% @word = Word.find_by_orth(word) %>
-				<% if @word %>
-				<tr>
-					<td><%= @word.orth %></td>
-					<% Word.attribute_options.each do |attribute| %>
-						<% if params[attribute]  %>
-							<td><%= @word.attributes[attribute] %></td>
-						<% end %>
-					<% end %>
-				</tr>
-			<% end %>
-		<% end %>
-	</table>
+	<%= render 'layouts/results_table' %>
 </section>
 
 

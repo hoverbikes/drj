@@ -11,6 +11,14 @@ $nicegreen: #169943;
 $accent_a: $nicegreen;
 $accent_b: $niceblue;
 
+#word_not_found {
+	margin-top:100px;
+	text-align: center;
+	em {
+		color: $niceblue;
+	}
+}
+
 #big_single_word {
 	text-align:center;
 	padding: 50px 0 50px;
@@ -22,14 +30,20 @@ $accent_b: $niceblue;
 		font-size:4em;
 	}
 }
-
+#single_word_attribute_field {
+	width: 80%;
+	padding-left: 8em;
+	margin: 0 auto;
+}
 section.attribute_pair {
+	font-size: 1.5em;
 	width: 8em;
 	float: left;
 	margin: 1em;
 	font-weight:600;
 	label{
 		font-weight: 300;
+		font-size: .8em;
 	}
 }
 
