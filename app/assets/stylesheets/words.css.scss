@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 /* COLOR CONSTANTS */
 $niceblue: #1967B0;
 $nicegreen: #169943;
@@ -11,8 +10,26 @@ $nicegreen: #169943;
 $accent_a: $nicegreen;
 $accent_b: $niceblue;
 
-#word_not_found {
-	margin-top:100px;
+#intro_to_phibase {
+	padding: 50px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	width: 400px;
+	float: left;
+	header {
+		text-align: center;
+		h1 {
+			line-height: 1em;
+		}
+		h3 {
+			line-height: 1em;
+			font-weight: 300;
+			margin: 0.5em 0 1em;
+		}
+	}
+}
+
+section.word_not_found {
 	text-align: center;
 	em {
 		color: $niceblue;
@@ -46,7 +63,6 @@ section.attribute_pair {
 		font-size: .8em;
 	}
 }
-
 section#word_selection {
 	float:left;
 	width: 400px;
@@ -77,8 +93,7 @@ fieldset#word_properties label {
 section#phibase_multiple_results {
 	margin: 50px 0 0 25px;
 	position: absolute;
-	top: 0;
-	left: 500px;
+	left: 1000px;
 	padding-right: 50px;
 }
 #including_homophones_boxes {

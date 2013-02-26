@@ -1,22 +1,14 @@
-	<table class="table">
-		<tr>
-			<th>orthographic word</th>
-			<% Word.attribute_options.each do |attribute| %>
-				<% if params[attribute] %><th title="<%=attribute.humanize%>"><%= attribute %></th><% end %>
-			<% end %>
-		</tr>
-
-		<% @wordarray.split(" ").each do |word|  %>
-			<% @word = Word.find(:first, :conditions => [ "lower(orth) = ?", word ]) #case insensitive %> 
-				<% if @word %>
-				<tr>
-					<td><%= @word.orth %></td>
-					<% Word.attribute_options.each do |attribute| %>
-						<% if params[attribute]  %>
-							<td><%= @word.attributes[attribute] %></td>
-						<% end %>
-					<% end %>
-				</tr>
-			<% end %>
+<% if @misses.any? %>
+<section class="word_not_found">
+	<h3>The <%= "word".pluralize(@misses.count) %> <em><%= @misses.to_sentence %></em> <%= @misses.count > 1 ? "are" : "is" %> not in the database.</h3>
+</section>
+<% end %>
+<table class="table">
+	<tr>
+		<th>orthographic word</th>
+		<% Word.attribute_options.each do |attribute| %>
+			<% if params[attribute] %><th title="<%=attribute.humanize%>"><%= attribute %></th><% end %>
 		<% end %>
-	</table>
+	</tr>
+	<%= render partial: 'word_row', collection: @words %>
+</table>

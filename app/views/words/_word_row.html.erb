@@ -1,0 +1,8 @@
+<tr>
+	<td><%= word_row.orth %></td>
+		<% Word.attribute_options.each do |attribute| %>
+			<% if params[attribute]  %>
+				<td><%= word_row.attributes[attribute] %></td>
+			<% end %>
+		<% end %>
+</tr>

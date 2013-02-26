@@ -1,4 +1,7 @@
-<section id="word_not_found">
+<div style="height:200px;"> </div>
+
+<section class="word_not_found">
 <h3>The word <em><%= params[:orth] %></em> is not in the database.</h3>
 <p>The data set contains three & four phoneme words with one vowel.</p>
+<%= link_to "back", phibase_path %>
 </section>
