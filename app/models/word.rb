@@ -6,10 +6,10 @@ class Word < ActiveRecord::Base
   	# Word.attribute_options contains them all, the others are mutually exclusive.
 
 	def self.attribute_options
-		["pron", "pattern", "nphon", "v_lec", "v_lec_freq", "v_lec_nh", "v_lec_nh_freq", "v_psum", "v_pskew", "v_pkurt", "v_psd", "v_pfwsum", "v_psum_nh", "v_pskew_nh", "v_pkurt_nh", "v_psd_nh", "v_pfwsum_nh", "a_denb", "a_denb_freq", "a_denb_nh", "a_denb_nh_freq", "a_dena", "a_dena_freq", "a_dena_nh", "a_dena_nh_freq", "a_dena_hfn", "a_dena_hfn_nh", "a_denb_hfn", "a_denb_hfn_nh", "a_psum", "a_pskew", "a_pkurt", "a_psd", "a_pfwsum", "a_psum_nh", "a_pskew_nh", "a_pkurt_nh", "a_psd_nh", "a_pfwsum_nh", "a_wt_psum", "a_wt_pskew", "a_wt_pkurt", "a_wt_psd", "a_wt_pfwsum", "a_wt_psum_nh", "a_wt_pskew_nh", "a_wt_pkurt_nh", "a_wt_psd_nh", "a_wt_pfwsum_nh"]
+		["pattern", "nphon", "v_lec", "v_lec_freq", "v_lec_nh", "v_lec_nh_freq", "v_psum", "v_pskew", "v_pkurt", "v_psd", "v_pfwsum", "v_psum_nh", "v_pskew_nh", "v_pkurt_nh", "v_psd_nh", "v_pfwsum_nh", "a_denb", "a_denb_freq", "a_denb_nh", "a_denb_nh_freq", "a_dena", "a_dena_freq", "a_dena_nh", "a_dena_nh_freq", "a_dena_hfn", "a_dena_hfn_nh", "a_denb_hfn", "a_denb_hfn_nh", "a_psum", "a_pskew", "a_pkurt", "a_psd", "a_pfwsum", "a_psum_nh", "a_pskew_nh", "a_pkurt_nh", "a_psd_nh", "a_pfwsum_nh", "a_wt_psum", "a_wt_pskew", "a_wt_pkurt", "a_wt_psd", "a_wt_pfwsum", "a_wt_psum_nh", "a_wt_pskew_nh", "a_wt_pkurt_nh", "a_wt_psd_nh", "a_wt_pfwsum_nh"]
 	end
 	def self.word_properties
-		["pron", "pattern", "nphon"]
+		["pattern", "nphon"]  #removed "pron"- replace in the word_properties and attribute_options arrays to restore
 	end
 	def self.v_only_categorical_including_homophones
 		["v_lec","v_lec_freq"]         
