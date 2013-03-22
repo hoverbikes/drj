@@ -1,15 +1,19 @@
 <% provide(:title, 'Phi-Lex Tool') %>
 
-<section id="intro_to_phi-lex">
-	<%= render 'intro' %>
-</section>
+<%= render 'header' %>
 
-<section id="word_selection">
-	<%= render 'layouts/multiple_word_selection' %>
-</section>
+<div id="intro_and_input">
+	<section id="intro_to_phi-lex">
+		<%= render 'intro' %>
+	</section>
+
+	<section id="word_selection">
+		<%= render 'layouts/multiple_word_selection' %>
+	</section>
+</div>
 
 <% if @words.any? %>
 <section id="phi-lex_multiple_results">
 	<%= render 'layouts/results_table' %>
 </section>
-<% end %>
+<% end %> 

@@ -6,36 +6,63 @@
 $niceblue: #1967B0;
 $nicegreen: #169943;
 
-/* COLOR VARIABLES */
+/* COLOR VARIABLES */ 
 $accent_a: $nicegreen;
 $accent_b: $niceblue;
 
+header {
+	margin-top: 50px;
+	text-align: center;
+	h1 {
+		line-height: 1em;
+	}
+	h3 {
+		line-height: 1em;
+		font-weight: 300;
+		margin: 0.5em 0 1em;
+	}
+	hr {
+		margin:25px auto;
+		width: 1000px;
+	}
+}
+#intro_and_input {
+	width: 1000px;
+	margin: 0 auto;
+}
 #intro_to_phi-lex {
-	padding: 50px;
+	padding: 15px 50px;
 	font-size: 1.2em;
 	line-height: 1.4em;
 	width: 400px;
 	float: left;
-	header {
-		text-align: center;
-		h1 {
-			line-height: 1em;
-		}
-		h3 {
-			line-height: 1em;
-			font-weight: 300;
-			margin: 0.5em 0 1em;
-		}
-	}
 }
+section#word_selection {
+	float:left;
+	width: 400px;
+	padding: 15px 50px;
 
+	textarea {
+		width:90%;
+		height: 140px;
+		font-size:1.5em;
+	}
+	label {
+		display:inline;
+	}
+	fieldset {
+		outline: 0;
+	}
+	ul {
+		list-style:none;
+	}
+} 
 section.word_not_found {
 	text-align: center;
 	em {
 		color: $niceblue;
 	}
 }
-
 #big_single_word {
 	text-align:center;
 	padding: 50px 0 50px;
@@ -63,38 +90,15 @@ section.attribute_pair {
 		font-size: .8em;
 	}
 }
-section#word_selection {
-	float:left;
-	width: 400px;
-	margin: 50px 25px 0 50px;
-	border-right: 3px solid #333;
-	padding-right: 25px;
-
-	textarea {
-		width:90%;
-		height: 50px;
-		font-size:1.5em;
-	}
-	label {
-		display:inline;
-	}
-	fieldset {
-		outline: 0;
-	}
-	ul {
-		list-style:none;
-	}
-} 
 fieldset#word_properties label {
 	display: inline-block;
 	margin-right: 75px;
 }
-
 section#phi-lex_multiple_results {
-	margin: 50px 0 0 25px;
-	position: absolute;
-	left: 1000px;
-	padding-right: 50px;
+	clear: both;
+	width:1000px;
+	margin: 50px auto;
+	overflow-x: scroll;
 }
 #including_homophones_boxes {
 	h1, h2 {
@@ -106,7 +110,6 @@ section#phi-lex_multiple_results {
 		color: $accent_b;
 	}
 }
-
 #including_homophones_boxes, #excluding_homophones_boxes {
 	width:200px;
 	float:left;
