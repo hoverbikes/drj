@@ -1,0 +1,12 @@
+<section id="glossary">
+<%= link_to 'back', '/phi-lex' %>
+<h1>Glossary of Terms</h1>
+<p>These definitions are also available elsewhere by hovering over any abbreviation.<p>
+	<hr>
+<% @terms.each do |term| %>
+	<h2 class="term"><%= term %></h2>
+	<p class="definition"><%= term.humanize %></p>
+<% end %>
+<hr>
+<%= link_to 'back', '/phi-lex' %>
+</section>

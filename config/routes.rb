@@ -1,6 +1,7 @@
 Drj::Application.routes.draw do
   match 'phi-lex/:orth', to: 'words#single_word'
   match 'phi-lex', to: 'words#multiple_word'
+  match 'phi-lex_glossary', to: 'words#glossary'
   root to: "pages#home"
 
   # The priority is based upon order of creation:

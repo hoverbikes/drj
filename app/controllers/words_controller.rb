@@ -24,7 +24,10 @@ class WordsController < ApplicationController
         @words << wordmatch
       end
     end
+  end
 
+  def glossary
+    @terms = Word.attribute_options.sort
   end
 
 end

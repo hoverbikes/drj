@@ -130,3 +130,15 @@ section#phi-lex_multiple_results {
 	height: 50px;
 	margin: 30px auto;
 }
+#glossary {
+	width: 500px;
+	margin: 50px auto;
+	padding:25px;
+	.term {
+		margin-top:1em;
+		margin-bottom: 0;
+	}
+	.defintion {
+		font-size: 1.2em;
+	}
+}
