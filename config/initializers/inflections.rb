@@ -17,7 +17,7 @@
 ActiveSupport::Inflector.inflections do |inflect|
     inflect.human 'orth', 'Orthography'
 	inflect.human 'pron', 'Phonological transcription (adapted from the ELP)'
-	inflect.human 'pattern', 'Target word pattern (e.g., CVC, CCVC)'
+	inflect.human 'pattern', 'Consonant/vowel pattern type (e.g., CVC, CCVC)'
 	inflect.human 'nphon', 'Number of phonemes'
 	inflect.human 'v_lec', 'Size of lexical equivalence class'
 	inflect.human 'v_lec_freq', 'Average frequency of words within the lexical equivalence class'
